@@ -38,8 +38,8 @@ int main() {
 	// erase(1,1,400,220);
 
 	do {
-		erase(1,1,400,220);
 		keypress = (char)getch();
+		erase(1,1,400,220);
 
 		if(keypress == about) {
 			about_game();
