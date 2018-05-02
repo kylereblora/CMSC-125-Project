@@ -14,9 +14,9 @@
 /* main menu controls */
 #define play 			'p'
 #define instructions 	'i'
-#define about 			'a'
+#define about 			'`'
 #define highscores		'h'
-#define exit			'`'
+#define exit			'.'
 
 #define YELLOW 			54
 #define PALE_YELLOW 	62
@@ -28,28 +28,42 @@
 
 int main() {
 	
-	char keypress = play;
+	char keypress;
 
 	set_graphics(VGA_320X200X256);
 	// erase(1,1,400,220);
 	
 	clrscr();
 	mainmenu();
-	keypress = (char)getch();
 	// erase(1,1,400,220);
 
+	do {
+		erase(1,1,400,220);
+		keypress = (char)getch();
 
+		if(keypress == about) {
+			about_game();
+		} else {
+			write_text("Key pressed.", 80, 40, ORANGE, 1);
+		}
 
-	if (keypress == exit) {
-		set_graphics(VGA_TEXT80X25X16);
-		clrscr();			
-	}
+	} while (keypress != exit);
+	set_graphics(VGA_TEXT80X25X16);
+	clrscr();			
+
+	// if (keypress == exit) {
+	// 	set_graphics(VGA_TEXT80X25X16);
+	// 	clrscr();			
+	// } else if (keypress == about) {
+	// 	// clrscr();
+	// 	about_game();
+	// }
 
 		
 
 }
 
-mainmenu() {
+void mainmenu() {
 	write_text("HANGUMANU", 120, 40, YELLOW, 1);
 
 	write_text("P", 120, 80, ORANGE, 1);
@@ -68,10 +82,13 @@ mainmenu() {
 	write_text("xit", 130, 160, WHITE, 1);
 }
 
-// about() {
-// 	write_text("Made by Kyle Reblora and Jasper Sunga", 80, 40, YELLOW, 1);
+void about_game() {
+	erase(1,1,400,220);
 
-// }
+	// char keypress = (char)getch()
+	write_text("Made by Kyle Reblora and Jasper Sunga", 80, 40, YELLOW, 1);
+
+}
 
 void erase(int x, int y, int w, int h){ //basically covers an area with a black rectangle 
    int i,j;
