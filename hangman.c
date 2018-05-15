@@ -361,14 +361,14 @@ void play_game(char * keypress, int * flag) {
     write_text("Level", 200,20,WHITE,1);
     char levelS[1];
     sprintf(levelS, "%d",level);
-    write_text(levelS,250,20,WHITE,1);
+    write_text(levelS,250,20,ORANGE,1);
     if(wrong==6){                                       // if the number of wrong attempts have been met
         // Game over                                    
-        write_text("GAME OVER",210,70,RED,1);
+        write_text("GAME OVER",195,70,RED,1);
     }else if(level==4){
         // Win
         erase(195, 21, 10, 10);
-        write_text("YOU WIN",170,50,GREEN,1);
+        write_text("YOU WIN",195,70,GREEN,1);
     }
     write_text("Score: ",200,100,WHITE,1);                // display user's score at the end of the game
     char character_score[3];
