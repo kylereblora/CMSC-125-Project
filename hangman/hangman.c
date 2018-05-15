@@ -357,18 +357,18 @@ void play_game(char * keypress, int * flag) {
     if(temp_wrong){
         draw_right_leg();
     }
-    write_text(category_name, 200,5,WHITE,1);
+    write_text(category_name, 200,5,ORANGE,1);
     write_text("Level", 200,20,WHITE,1);
     char levelS[1];
     sprintf(levelS, "%d",level);
-    write_text(levelS,250,20,ORANGE,1);
+    write_text(levelS,250,20,WHITE,1);
     if(wrong==6){                                       // if the number of wrong attempts have been met
         // Game over                                    
-        write_text("GAME OVER",195,70,RED,1);
+        write_text("GAME OVER.",195,70,RED,1);
     }else if(level==4){
         // Win
-        erase(195, 21, 10, 10);
-        write_text("YOU WIN",195,70,GREEN,1);
+        erase(195, 21, 120, 15);
+        write_text("YOU WIN!",195,70,GREEN,1);
     }
     write_text("Score: ",200,100,WHITE,1);                // display user's score at the end of the game
     char character_score[3];
@@ -478,7 +478,7 @@ void highscores_page(char * keypress, int * flag) {
         int actual_length = lengthC - '0';
         fread(score, actual_length, 1, fp);
         score[actual_length] = '\0';                    // limits the printing of the score on its actual number of digits
-        write_text(score,120,50+(i*20),WHITE,1);
+        write_text(score,150,70+(i*20),WHITE,1);
     }
     fclose(fp);
 
