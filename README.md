@@ -1,20 +1,23 @@
 # CMSC-125-Project
-Hangman for ICS-OS
+## Hangman for ICS-OS
 --------------------------------
-1. Extract from within ics-os source dir.
+1. Clone this repository or download the files.
+   * Move the hangman folder to /ics-os/contrib
+   * Inside /ics-os/contrib/hangman : 
+     ```
+     * $make
+     * $make install
+     ```
 
-   $tar xzvf hangumanu.tar.gz
-   $cd contrib/hangman
-   $make
-   $make install
+2. Copy scores.txt, movies.txt, and uplb.txt from /other to /ics-os/apps.
 
-2. Perform the steps to install ics-os.
+3. Perform the steps to install ics-os.
+   ```
    $cd ../..
    $make clean
    $make vmdex
    $make floppy
    #make boot-floppy
+   ```
 
-3. Copy scores.txt, movies.txt, and uplb.txt to /ics-os/apps.
-
-4. Run lightsout.exe inside ics-os
+4. Run hangman.exe inside ics-os
