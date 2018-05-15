@@ -1,12 +1,12 @@
 # CMSC-125-Project
-## Hangman for ICS-OS
+Hangman for ICS-OS
 --------------------------------
 1. Clone this repository or download the files.
    * Move the hangman folder to /ics-os/contrib
    * Inside /ics-os/contrib/hangman : 
      ```
-     * $make
-     * $make install
+     $make
+     $make install
      ```
 
 2. Copy scores.txt, movies.txt, and uplb.txt from /other to /ics-os/apps.
