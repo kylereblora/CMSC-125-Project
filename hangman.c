@@ -195,6 +195,7 @@ void play_game(char * keypress, int * flag) {
         print_letters(letters);                     // print letters
         // print stand
         draw_pole();
+        
         int temp_wrong = wrong;
         if(temp_wrong){                             // draw a body part for each wrong attempt
             // print head
@@ -272,6 +273,7 @@ void play_game(char * keypress, int * flag) {
                 guessed[i] = 1;
             }
             erase(150, 240, 100, 60);
+            print_letters(letters);
             print_blanks(guessed,length,word);          // print number of blanks based on length
             sleep(150);
         }
@@ -587,7 +589,7 @@ void print_blanks(int * guessed, int length, char * word) {
 	int i;
 	for(i = 0; i < length; i++) {
 		if (guessed[i] == 0) {
-			write_text(" _", 200+(i*20), 80, WHITE, 1); // printing the blanks based on the length of the word to be guessed
+			write_text("_", 200+(i*20), 80, WHITE, 1); // printing the blanks based on the length of the word to be guessed
 		} else {	
 			character[0] = word[i]; 
 			write_text(character, 200+(i*20), 80, WHITE, 1); // display the letter if the letter has been guessed correctly
@@ -602,12 +604,12 @@ void print_letters(int * letters) {
 	for(i = 0; i < 26; i++) {
 		if (letters[i] == 0) {              // prints all letters from a-z. 
 			character[0] = i+97;
-			if (i <= 13) write_text(character, 150+(i*11), 160, WHITE, 1); // white if not yet selected
-			else write_text(character, 150+((i%14)*11), 175, WHITE, 1);
+			if (i <= 13) write_text(character, 150+(i*10), 160, WHITE, 1); // white if not yet selected
+			else write_text(character, 150+((i%14)*10), 175, WHITE, 1);
 		} else if (letters[i] == 1){
 			character[0] = i+97;
-			if (i <= 13) write_text(character, 150+(i*11), 160, ORANGE, 1); // orange if selected
-			else write_text(character, 150+((i%14)*11), 175, ORANGE, 1);
+			if (i <= 13) write_text(character, 150+(i*10), 160, ORANGE, 1); // orange if selected
+			else write_text(character, 150+((i%14)*10), 175, ORANGE, 1);
 		}
 	}
 }
