@@ -223,6 +223,10 @@ void play_game(char * keypress, int * flag) {
         }
 
         write_text("Back - [0]", 16, 5, WHITE, 1);
+        write_text("Score - ",16,20,WHITE,1);
+        char current_score[3];
+        sprintf(current_score,"%d",score);
+        write_text(current_score,100,20,WHITE,1);
         write_text(category_name, 200,5, ORANGE ,1);
         write_text("Level", 200,20,WHITE,1);
         char levelS[1];
